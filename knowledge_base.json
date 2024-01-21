@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "question": "Hello!",
+      "answer": "Hey there!"
+    },
+    {
+      "question": "xin chao",
+      "answer": "chao ban"
+    },
+    {
+      "question": "ban co khoe khong",
+      "answer": "toi khoe cam on ban"
+    }
+  ]
+}
