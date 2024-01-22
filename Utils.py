@@ -24,10 +24,8 @@ def get_answer(question: str, knowledge_base: dict) -> str | None:
             return q["answer"]
 
 
-def chat_bot(data) -> str:
+def chat_bot(user_input, answer) -> str:
     knowledge_base: dict = load_knowledge_base('knowledge_base.json')
-    user_input = data.question
-    answer = data.answer
     if answer:
         knowledge_base["questions"].append({"question": user_input, "answer": answer})
         save_knowledge_base("knowledge_base.json", knowledge_base)
