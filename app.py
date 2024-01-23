@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 from Utils import chat_bot
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app, resources={r"/request": {"origins": "http://127.0.0.1:5500"}})  # Allow requests from this specific origin
 
 @app.route("/request", methods=["POST"])
 def post_question():
@@ -20,7 +20,7 @@ def post_question():
         response = chat_bot(question, answer)
     except Exception as e:
         return jsonify(e)
-    return jsonify(data_obj)
+    return jsonify(response)
 
 
 @app.route("/hello", methods=["GET"])
